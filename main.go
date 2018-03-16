@@ -15,10 +15,12 @@ func main() {
 	router.Handle("/healthcheck", http.HandlerFunc(healthcheck))
 
 	server := &http.Server{
-		Addr:    ":8000",
-		Handler: router,
+		Addr:     ":8000",
+		Handler:  router,
+		ErrorLog: logger,
 	}
 
+	logger.Println("Server is ready to handle requests at 8000")
 	if err := server.ListenAndServe(); err != nil && err != http.ErrServerClosed {
 		logger.Fatalf("Could not listen on 8000 : %v\n", err)
 	}

@@ -27,7 +27,7 @@ func main() {
 
 	router := http.NewServeMux()
 	router.Handle("/", http.HandlerFunc(index))
-	router.Handle("/healthcheck", http.HandlerFunc(healthcheck))
+	router.Handle("/healthz", http.HandlerFunc(healthz))
 
 	nextRequestID := func() string {
 		return fmt.Sprintf("%d", time.Now().UnixNano())
@@ -75,7 +75,7 @@ func index(w http.ResponseWriter, req *http.Request) {
 	w.Write([]byte("Hello worldssss"))
 }
 
-func healthcheck(w http.ResponseWriter, req *http.Request) {
+func healthz(w http.ResponseWriter, req *http.Request) {
 	if atomic.LoadInt32(&healthy) == 1 {
 		w.WriteHeader(http.StatusNoContent)
 		return

@@ -8,6 +8,7 @@ gcloud auth login
 gcloud auth list
 gcloud projects list
 
+make push CRED=xxxxxx.json
 make start ID=xxxxx
 make stop ID=xxxxx
 ```

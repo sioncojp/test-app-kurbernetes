@@ -65,6 +65,6 @@ cluster/deployment: _required_id
 
 cluster/delete: _required_id
 	-kubectl delete service $(APP)
-	-gcloud container clusters delete $(APP)
+	-gcloud container clusters delete $(APP) --zone $(REGION)
 
 .PHONY: clean build container run push start stop cluster/*

@@ -11,11 +11,8 @@ gcloud auth list
 gcloud projects list
 
 make start ID=xxxxx
-
-make stop
+make stop ID=xxxxx
 ```
-
-
 
 ### local development
 ```shell

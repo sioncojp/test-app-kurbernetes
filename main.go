@@ -72,7 +72,7 @@ func main() {
 }
 
 func index(w http.ResponseWriter, req *http.Request) {
-	w.Write([]byte("Hello worldssss"))
+	w.Write([]byte("Hello world"))
 }
 
 func healthz(w http.ResponseWriter, req *http.Request) {

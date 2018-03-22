@@ -1,6 +1,4 @@
 # test-app-kurbernetes
-* ref: https://blog.gopheracademy.com/advent-2017/kubernetes-ready-service/
-
 ```shell
 gcloud config set account xxxxxx@xxxxx
 gcloud config set project xxxxxx
